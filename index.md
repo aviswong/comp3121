@@ -1,6 +1,8 @@
 <html>
   <head>
     <title>
+      comp
+    </title>
       <script type="text/javascript">
         var queryString = window.location.search.slice(1);
         // if query string exists
