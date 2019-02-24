@@ -87,6 +87,56 @@
       <blockquote class="embedly-card"><h4><a href="https://www.meetup.com/Youth-Entrepreneur-Warrior-Hong-Kong-%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%BB%8D-%E9%A6%99%E6%B8%AF/">Youth Entrepreneur Warrior (Hong Kong) 青年創業軍 (香港) (Hong Kong, Hong Kong)</a></h4><p>Youth Entrepreneur Warrior is a famous youth entrepreneur organization in Hong Kong, bridging all youth entrepreneurs in Hong Kong, helping each other in this business world, and looking for any bright and new business opportunities. With regular and sometimes large-scale gathering events, we and our members are like a family, which facilitates Hong Kong youth entrepreneurs to share their feelings, their experiences and their opinions.</p></blockquote>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
       TBD
+      
+      function fetchGroups(url, cb, data) {
+	if(!data) data = [];
+	
+	$.ajax({
+		
+		dataType:'jsonp',
+		method:'get',
+		url:url,
+		success:function(result) {
+			console.log('back with ' + result.data.length +' results');
+			console.dir(result);
+			//add to data
+			data.push.apply(data, result.data);
+			if(result.meta.next_link) {
+				var nextUrl = result.meta.next_link;
+				fetchGroups(nextUrl, cb, data);
+			} else {
+				cb(data);	
+			}
+		}
+	});	
+	
+}
+
+$(document).ready(function() {
+	
+	var $results = $("#results");
+
+	$results.html("<p>Finding meetups with Ionic in the description.</p>");
+
+	fetchGroups("https://api.meetup.com/find/groups?&photo-host=public&page=50&text=ionic&sig_id=2109318&radius=global&order=newest&sig=ad335a79ccce2b1bb65b27fe10ea6836305e5533&callback=?", function(res) {
+		console.log("totally done");
+		console.dir(res);	
+
+		var s = "";
+		for(var i=0;i<res.length; i++) {
+			var group = res[i];
+			s += "<h2>"+(i+1)+" <a href='"+group.link+"'>"+group.name+"</a></h2>";
+			if(group.group_photo && group.group_photo.thumb_link) {
+				s += "<img src=\"" + group.group_photo.thumb_link + "\" align=\"left\">";
+			}
+			s += "<p>Location: "+group.city + ", " + group.state + " " + group.country + "</p><br clear=\"left\">";
+		}
+		$results.html(s);
+		
+		
+	});
+		
+});
     </body>
     </html>
   
