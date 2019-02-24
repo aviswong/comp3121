@@ -137,8 +137,7 @@ $(document).ready(function() {
       <blockquote class="embedly-card"><h4><a href="https://www.meetup.com/Youth-Entrepreneur-Warrior-Hong-Kong-%E9%9D%92%E5%B9%B4%E5%89%B5%E6%A5%AD%E8%BB%8D-%E9%A6%99%E6%B8%AF/">Youth Entrepreneur Warrior (Hong Kong) 青年創業軍 (香港) (Hong Kong, Hong Kong)</a></h4><p>Youth Entrepreneur Warrior is a famous youth entrepreneur organization in Hong Kong, bridging all youth entrepreneurs in Hong Kong, helping each other in this business world, and looking for any bright and new business opportunities. With regular and sometimes large-scale gathering events, we and our members are like a family, which facilitates Hong Kong youth entrepreneurs to share their feelings, their experiences and their opinions.</p></blockquote>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
       TBD
-    
- <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F?__tn__=kC-R&eid=ARDaA5KiuOAPnTTQ_v_CTu1YW1o9OqvSWAQS4MUbUXClyEXFYvL9IcfuN3VgOT83Vapn-k4mJfZ7iIF6&hc_ref=ARRXtqlCAzHyWDgVFAm2jrKsDNOm0l8LxIz73CMxyUq6Y_H2S-9SXdbjppMYBbP6H_4&fref=nf&amp;width=600&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=435" scrolling="yes" frameborder="0" style="border:none; overflow:hidden; width:600px; height:430px; background: white; float:left; " allowTransparency="true"></iframe>
+    <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fhelen.chan.927&width=600&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=435" scrolling="yes" frameborder="0" style="border:none; overflow:hidden; width:600px; height:430px; background: white; float:left; " allowTransparency="true"></iframe>
     </body>
     </html>
   
