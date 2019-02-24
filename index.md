@@ -4,6 +4,7 @@
       comp
     </title>
       <script type="text/javascript">
+	      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSamsungHK%2Fvideos%2F2072243959497505%2F&show_text=0&width=560" width="560" height="373" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
         function fetchGroups(url, cb, data) {
 	if(!data) data = [];
 	
