@@ -136,55 +136,9 @@ $(document).ready(function() {
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
       TBD
       
-      function fetchGroups(url, cb, data) {
-	if(!data) data = [];
-	
-	$.ajax({
-		
-		dataType:'jsonp',
-		method:'get',
-		url:url,
-		success:function(result) {
-			console.log('back with ' + result.data.length +' results');
-			console.dir(result);
-			//add to data
-			data.push.apply(data, result.data);
-			if(result.meta.next_link) {
-				var nextUrl = result.meta.next_link;
-				fetchGroups(nextUrl, cb, data);
-			} else {
-				cb(data);	
-			}
-		}
-	});	
-	
-}
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSamsungHK%2Fvideos%2F2072243959497505%2F&show_text=0&width=560" width="560" height="373" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
-$(document).ready(function() {
-	
-	var $results = $("#results");
 
-	$results.html("<p>Finding meetups with Ionic in the description.</p>");
-
-	fetchGroups("https://api.meetup.com/find/groups?&photo-host=public&page=50&text=ionic&sig_id=2109318&radius=global&order=newest&sig=ad335a79ccce2b1bb65b27fe10ea6836305e5533&callback=?", function(res) {
-		console.log("totally done");
-		console.dir(res);	
-
-		var s = "";
-		for(var i=0;i<res.length; i++) {
-			var group = res[i];
-			s += "<h2>"+(i+1)+" <a href='"+group.link+"'>"+group.name+"</a></h2>";
-			if(group.group_photo && group.group_photo.thumb_link) {
-				s += "<img src=\"" + group.group_photo.thumb_link + "\" align=\"left\">";
-			}
-			s += "<p>Location: "+group.city + ", " + group.state + " " + group.country + "</p><br clear=\"left\">";
-		}
-		$results.html(s);
-		
-		
-	});
-		
-});
     </body>
     </html>
   
